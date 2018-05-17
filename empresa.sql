@@ -1,7 +1,7 @@
---Criando o banco de dados
+-- Banco de dados
 create database empresa;
 
--- Criando as tabelas
+-- Tabelas
 create table empregado(
 pnome varchar(20),
 minicial char,
@@ -48,23 +48,23 @@ datanasc date,
 parentesco varchar(20)
 );
 
--- Povoando as tabelas
+-- Povoando
 insert into empregado (pnome, minicial, unome, ssn, datanasc,endereco, sexo, salario, superssn, dno)
 values
-('John','B','Smith',123456789, to_date('1965-01-09','yyyy-mm-dd'),'731 Fondren, Houston, TX', 'M', 30000, 333445555, 5),
-('Franklin','T','Wong',333445555, to_date('1955-12-08','yyyy-mm-dd'),'683 Voss, Houston, TX', 'M', 40000, 888665555,5),
-('Alicia','J','Zelaya',999887777, to_date('1968-01-19','yyyy-mm-dd'),'3321 Castle, Spring, TX', 'F', 25000, 987654321,4),
-('Jennifer','S','Wallace',987654321, to_date('1941-06-20','yyyy-mm-dd'),'291 Berry, Bellaire, TX', 'F', 43000, 888665555,4),
-('Ramesh','K','Narayan',666884444, to_date('1962-09-15','yyyy-mm-dd'),'975 Fire Oak, Humble, TX', 'M', 38000,
+('John','B','Smith',123456789,'1965-01-09','731 Fondren, Houston, TX', 'M', 30000, 333445555, 5),
+('Franklin','T','Wong',333445555,'1955-12-08','683 Voss, Houston, TX', 'M', 40000, 888665555,5),
+('Alicia','J','Zelaya',999887777,'1968-01-19','3321 Castle, Spring, TX', 'F', 25000, 987654321,4),
+('Jennifer','S','Wallace',987654321,'1941-06-20','291 Berry, Bellaire, TX', 'F', 43000, 888665555,4),
+('Ramesh','K','Narayan',666884444,'1962-09-15','975 Fire Oak, Humble, TX', 'M', 38000,
 333445555,5),
-('Joyce','A','English',453453453, to_date('1972-07-31','yyyy-mm-dd'),'5631 Rice, Houston, TX', 'F', 25000, 333445555,5),
-('Ahmad','V','Jabbar',987987987, to_date('1969-03-29','yyyy-mm-dd'),'980 Dallas, Houston, TX', 'M', 25000, 987654321,4),
-('James','E','Borg',888665555, to_date('1937-11-10','yyyy-mm-dd'),'450 Stone, Houston, TX', 'M', 55000, null,1);
+('Joyce','A','English',453453453,'1972-07-31','5631 Rice, Houston, TX', 'F', 25000, 333445555,5),
+('Ahmad','V','Jabbar',987987987,'1969-03-29','980 Dallas, Houston, TX', 'M', 25000, 987654321,4),
+('James','E','Borg',888665555,'1937-11-10','450 Stone, Houston, TX', 'M', 55000, null,1);
 insert into departamento (dnome, dnumero, gerssn, gerdatainicio)
 values
-('Pesquisa',5,333445555,to_date('1968-05-22','yyyy-mm-dd')),
-('Administração',4,987654321,to_date('1995-01-01','yyyy-mm-dd')),
-('Sede administrativa',1,888665555,to_date('1981-06-19','yyyy-mm-dd'));
+('Pesquisa',5,333445555,'1968-05-22'),
+('Administração',4,987654321,'1995-01-01'),
+('Sede administrativa',1,888665555,'1981-06-19');
 insert into dept_localizacoes (dnumero, dlocalizacao)
 values
 (1,'Houstong'),
@@ -100,15 +100,15 @@ values
 ('Novos Benefícios', 30, 'Stafford',4);
 insert into dependente (essn, nome_dependente, sexo, datanasc, parentesco)
 values
-(333445555, 'Alice', 'F', to_date('1986-04-05','yyyy-mm-dd'), 'FILHA'),
-(333445555, 'Theodore', 'M', to_date('1983-10-25','yyyy-mm-dd'), 'FILHO'),
-(333445555, 'Joy', 'F', to_date('1958-05-03','yyyy-mm-dd'), 'CÔNJUGE'),
-(987654321, 'Abner', 'M', to_date('1942-02-28','yyyy-mm-dd'), 'CÔNJUGE'),
-(123456789, 'Michael', 'M', to_date('1988-01-04','yyyy-mm-dd'), 'FILHO'),
-(123456789, 'Alice', 'F', to_date('1988-12-30','yyyy-mm-dd'), 'FILHA'),
-(123456789, 'Elizabeth', 'F', to_date('1967-05-05','yyyy-mm-dd'), 'CÔNJUGE');
+(333445555, 'Alice', 'F','1986-04-05','FILHA'),
+(333445555, 'Theodore', 'M','1983-10-25','FILHO'),
+(333445555, 'Joy', 'F','1958-05-03','CÔNJUGE'),
+(987654321, 'Abner', 'M','1942-02-28','CÔNJUGE'),
+(123456789, 'Michael', 'M','1988-01-04','FILHO'),
+(123456789, 'Alice', 'F','1988-12-30','FILHA'),
+(123456789, 'Elizabeth', 'F','1967-05-05','CÔNJUGE');
 
--- Aplicando restrições de integridades
+-- Restrições de integridades: chave e referencial
 alter table empregado add constraint pk_empregado primary key (ssn);
 alter table departamento add constraint pk_departamento primary key (dnumero);
 alter table dept_localizacoes add constraint pk_dept_localizacoes primary key (dnumero, dlocalizacao);
