@@ -83,31 +83,35 @@
 	\section{Abordagem Relacional}
 	
 	\begin{enumerate}
-		\item Abaixo aparece um esquema parcial para um banco de dados relacional. Identifique neste
-		esquema as chaves primárias e as chaves estrangeiras: 
+		\item Para o esquema parcial para um banco de dados relacional, construa um diagrama lógico considerando os identificadores de tabela e atributos, os tipos de dados, e os esquemas das chaves primária e estrangeira.
 		
-		Aluno (codigo\_aluno, nome, codigo\_curso)\\
-		Curso(codigo\_curso, nome)\\
-		Disciplina(codigo\_disciplina, nome, creditos, codigo\_departamento)\\
-		Curriculo(codigo\_curso, codigo\_disciplina, obrigatoria\_opcional)\\
-		Conceito(codigo\_aluno, codigo\_disciplina, ano\_Semestre, conceito)\\
-		Departamento(codigo\_departamento, nome)
+		empregado(codigo, nome, cpf, endereco, sexo, data\_nascimento)\\
+		dependente(codigo, nome, cpf, sexo, data\_nascimento, tipo\_dependente, empregado)\\
+		tipo\_dependente(codigo, descricao)
 		
-		\item Levando em consideração o esquema de banco de dados apresentado na primeira questão, quais
-		as restrições de domínios aplicadas em cada campo de todas as tabelas.
+		\item Para o esquema parcial para um banco de dados relacional, construa um diagrama lógico considerando os identificadores de tabela e atributos, os tipos de dados, e os esquemas das chaves primária e estrangeira.
 		
-		\item Para o banco de dados cujo esquema está definido abaixo, explique que verificações devem ser
-		feitas pelo SGBD para garantir integridade referencial nas seguintes situações: 
+		aluno (matricula, nome, curso)\\
+		curso(codigo, nome, carga\_horaria)\\ 
+		disciplina(codigo, nome, creditos, departamento)\\ 
+		curriculo(curso, disciplina, obrigatoria\_opcional)\\ 
+		conceito(aluno, disciplina, ano, semestre, conceito)\\ 
+		departamento(codigo, nome)\\
 		
-		a) Uma linha é incluída na tabela consulta.\\
-		b) Uma linha é excluída da tabela paciente.\\
+		\item Para o esquema parcial para um banco de dados relacional, construa um diagrama lógico considerando os identificadores de tabela e atributos, os tipos de dados, e os esquemas das chaves primária e estrangeira.
+				
+		paciente(codigo, nome)\\
+		convenio(codigo, nome)\\
+		medico(crm, nome, especialização)\\
+		consulta(convenio, paciente, medico, data\_hora)\\
 		
-		paciente(codigo\_convenio, numero\_paciente, nome)\\
-		codigo\_convenio referencia convenio\\
-		convenio(codigo\_convenio, nome)\\
-		medico(CRM, nome, especialização)\\
-		consulta(codigo\_convenio, numero\_paciente, CRM, data\_hora)\\
-		(codigo\_convenio, numero\_paciente) referencia paciente CRM referencia Medico 
+		\item Construa um diagrama relacional para um sistema de agenda de contatos de telefone.
+		
+		\item Construa um diagrama relacional para um sistema de controle de estoque.
+		
+		\item Construa um diagrama relacional para um sistema de controle de vendas para um restaurante.
+		
+		\item Construa um diagrama relacional para um sistema de controle de aluguel de carros.
 	\end{enumerate}
 	
 	\newpage
